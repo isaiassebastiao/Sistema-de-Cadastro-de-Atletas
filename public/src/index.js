@@ -1,12 +1,10 @@
-
-
 const form = document.querySelector('form');
 form.addEventListener('submit', async event=>{
     event.preventDefault();
     const formData = new FormData(form);
 
     try{
-        const response = await fetch('../index.php',{
+        const response = await fetch('../index.php?api=1',{
             method:'POST',
             body:formData
         });
@@ -26,19 +24,18 @@ form.addEventListener('submit', async event=>{
 
 });
 
-
 window.addEventListener('load', async()=>{
     try{
-        const response = await fetch('../index.php');
+        const response = await fetch('../index.php?api=1');
         const jsonResponse = await response.json();
         
         const tbody = document.querySelector('tbody');
         if(jsonResponse.success == false){
             document.body.innerHTML = `<h1 style="text-align:center; margin-top:20%;">${jsonResponse.message}</h1>`;   
         }
-        else{
+        else if(jsonResponse.success){
             tbody.innerHTML = ``;
-            jsonResponse.forEach(element=>{
+            jsonResponse.data.forEach(element=>{
                 tbody.innerHTML += `
                                 <tr>
                                     <td>${element.nome}</td>

@@ -98,6 +98,6 @@ class Model{
         $stmt->execute();
 
         $athletes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $athletes;
+        return ['success'=>true,'data'=>$athletes];
     }
 }
