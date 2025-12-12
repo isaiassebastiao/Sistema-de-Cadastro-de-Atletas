@@ -5,8 +5,6 @@ class Controller{
     
     public function Router(){
 
-        header('Location: view/home.html');
-        
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
             $name = $_POST['nome'];
@@ -49,6 +47,7 @@ class Controller{
             echo json_encode($athletes);
             return;
         }
+        header('Location: view/home.html');
     }
 }
 
