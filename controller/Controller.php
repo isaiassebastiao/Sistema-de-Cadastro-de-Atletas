@@ -51,7 +51,7 @@ class Controller{
             }
         }
 
-        header('Location: view/home.html');
+        readfile('view/home.html');
 
     }
 }
