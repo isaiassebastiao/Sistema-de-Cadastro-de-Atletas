@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Atletas</title>
+    <link rel="stylesheet" href="../public/css/index.css">
+</head>
+<body>
+    <div class="wrapper">
+        <section class="section-1">
+            <h1>Sistema de Cadastro de Atletas</h1>
+            <p>Cadastre um jogador em nosso sistema no formulário abaixo e nós vamos nos encarregar de indexá-lo para o clube mais próximo.</p>
+        </section>
+        <section class="section-2">
+            <div>
+                <form>
+                    <h3>Cadastrar Jogador</h3>
+                    <div><input type="text" required placeholder="informe o nome do atleta" name="nome" autocomplete="off"></div>
+                    <div>
+                        <div>
+                            <label for="opts">informe o municipio do atleta</label>
+                        </div>
+                        <select name="municipio" required id="opts">
+                            <option value="Luanda">Luanda</option>
+                            <option value="Cacuaco">Cacuaco</option>
+                            <option value="Lobito">Lobito</option>
+                            <option value="Viana">Viana</option>
+                            <option value="Benguela">Benguela</option>
+                            <option value="Uíge">Uíge</option>
+                            <option value="Soyo">Soyo</option>
+                            <option value="Lubango">Lubango</option>
+                            <option value="Malanje">Malange</option>
+                            <option value="Huambo">Huambo</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+                    <div style="text-align: center;">
+                        <div>
+                            <label for="data">Sua data de nascimento</label>
+                        </div>
+                        <input type="date" required name="data-nascimento" id="data">
+                    </div>
+                    <div><input type="submit" value="cadastrar"></div>
+                </form>
+            </div>
+            <div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="6">Atletas</th>
+                        </tr>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Morada(município)</th>
+                            <th>Nivel de Equipa</th>
+                            <th>Clube</th>
+                            <th>Município do Clube</th>
+                            <th>Data de Nascimento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+<script src="../public/src/index.js"></script>
