@@ -5,6 +5,8 @@ class Controller{
     
     public function Router(){
 
+        header('Location: view/home.html');
+        
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
             $name = $_POST['nome'];
@@ -38,7 +40,7 @@ class Controller{
             $response = $model->insertAthlete($name, $adress, $birthDate, $idCategory, $idClub['id']);
 
             echo json_encode($response);
-            //exit;
+            return;
         }else if($_SERVER['REQUEST_METHOD'] == 'GET'){
             
             $model = new Model();
@@ -47,7 +49,6 @@ class Controller{
             echo json_encode($athletes);
             return;
         }
-        header('Location: view/home.html');
     }
 }
 
